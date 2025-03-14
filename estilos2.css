@@ -1,0 +1,29 @@
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 20%;
+}
+
+li a{
+	display: block;
+	background-color: #40e100;
+	padding: 8px 10px;
+	text-decoration: none;
+	color: purple;
+}
+
+li a:hover{
+	background-color: orange;
+	color: #10ffed;
+}
+
+li a.activo{
+	background-color: #00c3d8;
+	color: yellow;
+}
+
+li a:hover:not(.activo){
+	background-color: #a70077;
+	color: #b7e504;
+}
