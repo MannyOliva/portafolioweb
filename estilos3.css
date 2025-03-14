@@ -1,0 +1,59 @@
+.capa1{
+	margin-left: 25%;
+	padding: 12px;
+	height: 1000px;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	background-color: #40e100;
+	overflow: auto;
+}
+
+li a{
+	display: block;
+	background-color: #40e100;
+	padding: 8px 10px;
+	text-decoration: none;
+	color: purple;
+}
+
+li a:hover{
+	background-color: orange;
+	color: #10ffed;
+}
+
+li a.activo{
+	background-color: #00c3d8;
+	color: yellow;
+}
+
+li a:hover:not(.activo){
+	background-color: #a70077;
+	color: #b7e504;
+}
+
+h1{
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h2{
+  font-family: "Roboto Mono", monospace;
+}
+
+@font-face{
+	font-family: "parrafos";
+	src: url("fuentes/Outfit-VariableFont_wght.ttf") format("truetype");
+}
+
+p{
+	font-family: "parrafos";
+}
