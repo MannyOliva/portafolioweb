@@ -1,0 +1,212 @@
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: Arial, sans-serif;
+
+        }
+ 
+        body {
+
+            background-color: #1a1a1a;
+
+            background-image: url(guitars.jpg);
+
+            background-position: center;
+
+            height: 1100px;
+
+            width: 100%;
+
+            background-repeat: no-repeat;
+
+            color: #fff;
+
+            line-height: 1.6;
+
+        }
+ 
+        nav {
+
+            background-color: #000;
+
+            padding: 1rem;
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 100;
+
+        }
+ 
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 2rem;
+
+        }
+ 
+        nav ul li a {
+
+            color: #f28c38;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+        }
+ 
+        nav ul li a:hover {
+
+            color: #fff;
+
+        }
+ 
+
+        .hero {
+
+            height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+
+        }
+ 
+        .hero h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 1rem;
+
+        }
+ 
+        .hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 600px;
+
+        }
+ 
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 2rem;
+
+            padding: 0.8rem 2rem;
+
+            background-color: #f28c38;
+
+            color: #000;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+        }
+ 
+        .btn:hover {
+
+            background-color: #fff;
+
+        }
+ 
+
+
+        .products {
+
+            padding: 4rem 2rem;
+
+            text-align: center;
+
+        }
+ 
+        .products h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 2rem;
+
+            color: #f28c38;
+
+        }
+ 
+        .product-grid {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 2rem;
+
+            flex-wrap: wrap;
+
+        }
+ 
+        .product-item {
+
+            background-color: #2b2b2b;
+
+            padding: 1rem;
+
+            width: 250px;
+
+            border-radius: 5px;
+
+        }
+ 
+        .product-item img {
+
+            width: 50%;
+
+            height: 70%;
+
+            border-radius: 5px;
+
+        }
+ 
+        .product-item h3 {
+
+            margin: 1rem 0;
+
+        }
+ 
+
+        footer {
+
+            background-color: #000;
+
+            padding: 2rem;
+
+            text-align: center;
+
+            color: #f28c38;
+
+        }
