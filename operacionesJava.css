@@ -1,0 +1,12 @@
+body{
+	background-color: rgb(77, 0, 30);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 550px;
+}
+
+form{
+	background-color: rgb(80, 0, 0);
+	border: 5px solid black;
+}
