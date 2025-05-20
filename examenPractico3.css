@@ -1,0 +1,90 @@
+body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    color: #e0cda9;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 2.2em;
+    margin-top: 40px;
+    color: #e0cda9;
+    text-shadow: 0 2px 8px #000, 0 0 2px #bfa76f;
+}
+
+.caja {
+    background: rgba(34, 36, 38, 0.95);
+    padding: 28px 22px 22px 22px;
+    border: 2px solid #bfa76f;
+    border-radius: 18px;
+    max-width: 370px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 1.08em;
+    color: #bfa76f;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+input[type="number"] {
+    background: #232526;
+    color: #e0cda9;
+    border: 1.5px solid #bfa76f;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 1em;
+    margin-bottom: 8px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+    border: 2px solid #e0cda9;
+    background: #2d2f31;
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #bfa76f 0%, #e0cda9 100%);
+    color: #232526;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1.08em;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px #00000044;
+    transition: background 0.2s, color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #e0cda9 0%, #bfa76f 100%);
+    color: #232526;
+}
+
+.resultado {
+    margin-top: 18px;
+    font-size: 1.15em;
+    background: rgba(191, 167, 111, 0.08);
+    color: #e0cda9;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1.5px solid #bfa76f;
+    box-shadow: 0 2px 8px #00000033;
+    text-align: center;
+}
