@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1 parcial 2</title>
+    <style>
+        body, input, select, textarea, table, fieldset, legend, label, h1, h2, h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<header><h1 style="text-align: center;" >Volkswagen Potosina</h1>
+		<h2 style="text-align: center;">Compras Online</h2>
+</header>
+<body style="background-color: #ADD8E6 ">
+    <fieldset>
+        <legend>Información general del cliente</legend>
+
+        <table style="margin: auto; width: 80%">
+            <tbody>
+                <tr>
+                    <td><label for="usuario">Nombre:</label> <br>
+                        <input type="text" name="usuario" maxlength="25" placeholder="Nombre " title="name user" required> 
+                    </td> 
+
+                    <td><label for="apellidop">Apellido paterno:</label><br>
+                        <input type="text" name="apellidop" maxlength="25" placeholder="Apellido paterno"> 
+                    </td> 
+                    
+                    <td>
+                        <label for="apellidom">Apellido materno:</label> <br>
+                        <input type="text" name="apellidom" maxlength="25" placeholder="Apellido materno"> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="usuario">Noumbre usuario</label> <br>
+                        <input type="text" name="usuario" maxlength="25" placeholder="Nombre del ususario" title="name user" required> <br> 
+                    </td>
+                    <td>
+                        <label for="pass">Password</label><br>
+                        <input type="password" name="pass" id="pass" maxlength="35" size="15" placeholder="password" title="contraseña" required> <br>
+                    </td>
+                    <td>
+                        <label for="fechan">Fecha de registro:</label> <br>
+                        <input type="date" name="fechan" id="fechan"> <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Datos para facturar</legend>
+        <table style="margin: auto; width: 80%;">
+            <tbody>
+                <tr>
+                    <td><label for="pais">País</label><br>
+                        <select id="pais" name="pais" size="3">
+                        	<optgroup>
+	                        	<option value="1">Mexico</option>
+	                            <option value="2">Canáda</option>
+	                            <option value="3">Reino Unido</option>
+                        	</optgroup>
+                        </select>
+                    </td>
+                    <td><label for="ciudad">Ciudad</label><br>
+                        <select name="ciudad" id="ciudad" size="3">
+                        	<optgroup>
+	                        	<option value="1" selected="">San Luis Potosí</option>
+	                            <option value="2">Monterrey</option>
+	                            <option value="3">Cd Valles</option>
+                        	</optgroup>
+                        </select> 
+                    </td>
+                    <td>
+                        <label for="calle">Calle:</label><br>
+                        <input type="text" id="calle" name="calle" placeholder="Calle"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="houseNumber">Número de casa:</label><br>
+                        <input type="number" id="houseNumber" name="houseNumber" placeholder="Número exterior"><br><br>
+                    </td>
+                    <td>
+                        <label for="colonia">Colonia:</label><br>
+                    <input type="text" id="colonia" name="colonia" placeholder="Colonia"><br><br>
+                    </td>
+                    <td>
+                        <label for="correo">E-mail:</label><br>
+                        <input type="email" name="correo" id="correo" required placeholder="L-mail"> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="rfc">R.F.C.</label><br>
+                        <input type="text" id="rfc" name ="rfc" placeholder="R.F.C." required><br><br>
+                    </td>
+                    <td>
+                        <label for ="cpostal">C.P.</label><br>
+                        <input type ="number"id ="cpostal"name ="cpostal" placeholder="Código postal"><br><br>
+                    </td>
+                    <td>
+                    	<input type="checkbox" name="pasa1" id="pasa1" value="1" checked>
+			  	<label for="pasa1">Acepto términos y condiciones</label><br/>
+                        <input type = "submit"value = "Enviar">
+                        <input type = "reset"value = "Restablecer">
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </fieldset>
+    <h3 style="text-align: right;">Febrero 2025, SLP.</h3>
+    
+</body>
+</html>
