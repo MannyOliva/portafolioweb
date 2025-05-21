@@ -1,0 +1,78 @@
+/* Estilo general para el cuerpo: usando rem para tamaño de fuente base */
+html {
+    font-size: 16px; /* Tamaño base para rem */
+}
+
+body {
+    margin: 0;
+    padding: 1rem; /* Relativa al tamaño de fuente raíz */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Encabezado con unidades absolutas */
+header {
+    width: 21cm; /* Unidad absoluta: tamaño fijo */
+    height: 100px; /* Píxeles: absoluta */
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding-top: 20pt; /* Puntos: absoluta, común en tipografía */
+    margin: 0 auto 10px auto; /* Centrado con px */
+}
+
+/* Contenedor principal con unidades relativas */
+.container {
+    width: 80%; /* Porcentaje: relativo al ancho del padre (body) */
+    max-width: 1200px; /* Límite en px para evitar que crezca demasiado */
+    margin: 0 auto; /* Centrado */
+}
+
+/* Sección con unidades mixtas */
+.section {
+    background-color: white;
+    padding: 2em; /* Relativa al tamaño de fuente del padre */
+    margin-bottom: 1.5rem; /* Relativa al tamaño de fuente raíz */
+    border: 3px solid #2ecc71; /* Píxeles: absoluta */
+    font-size: 1.2em; /* Relativa al tamaño de fuente del padre */
+}
+
+/* Títulos con unidades relativas al viewport */
+h2 {
+    font-size: 4vw; /* Relativa al ancho de la ventana */
+    color: #e74c3c;
+}
+
+/* Párrafos con mezcla de unidades */
+p {
+    line-height: 1.5; /* Sin unidad: factor relativo */
+    margin: 0 0 1em 0; /* em: relativa al tamaño de fuente del elemento */
+}
+
+/* Caja flotante con vh y vmin */
+.box {
+    width: 20vmin; /* Relativa al menor entre ancho y alto de viewport */
+    height: 20vh; /* Relativa al alto de la ventana */
+    background-color: #f1c40f;
+    float: left;
+    margin-right: 1rem;
+    text-align: center;
+    line-height: 20vh; /* Alinea texto verticalmente */
+}
+
+/* Limpiar flotación */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Pie de página con unidades absolutas y relativas */
+footer {
+    text-align: center;
+    padding: 10mm; /* Milímetros: absoluta */
+    background-color: #34495e;
+    color: white;
+    margin-top: 2rem;
+    font-size: 12pt; /* Puntos: absoluta */
+}
