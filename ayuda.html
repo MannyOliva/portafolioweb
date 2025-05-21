@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayuda - Fender Guitars</title>
+<link rel="stylesheet" href="estilos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+window.addEventListener('mouseover', initLandbot, { once: true });
+window.addEventListener('touchstart', initLandbot, { once: true });
+var myLandbot;
+function initLandbot() {
+  if (!myLandbot) {
+    var s = document.createElement('script');
+    s.type = "module"
+    s.async = true;
+    s.addEventListener('load', function() {
+      var myLandbot = new Landbot.Livechat({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2934323-4DH4E2T5ZLEMPHVT/index.json',
+      });
+    });
+    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+}
+</script>
+</head>
+<body>
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="#">Productos</a></li>
+<li><a href="home.html">Galería</a></li>
+<li><a href="#">Nosotros</a></li>
+<li><a href="ayuda.html">Ayuda</a></li>
+</ul>
+</nav>
+ 
+    <section class="products">
+<h2>Formulario de Cotización</h2>
+<form id="cotizacionForm" onsubmit="return generarCotizacion(event)">
+<label for="nombre">Nombre:</label><br>
+<input type="text" id="nombre" name="nombre" required><br><br>
+ 
+            <label for="email">Email:</label><br>
+<input type="email" id="email" name="email" required><br><br>
+ 
+            <label for="guitarra">Selecciona una guitarra:</label><br>
+<select id="guitarra" name="guitarra" required>
+<option value="">-- Selecciona --</option>
+<option value="Stratocaster|1200">Stratocaster - $1,200</option>
+<option value="Telecaster|1000">Telecaster - $1,000</option>
+<option value="Jazzmaster|1500">Jazzmaster - $1,500</option>
+</select><br><br>
+ 
+            <label for="cantidad">Cantidad:</label><br>
+<input type="number" id="cantidad" name="cantidad" min="1" required><br><br>
+ 
+            <p id="total" style="color: #f28c38; font-weight: bold;"></p>
+<p id="mensajeError" style="color: red;"></p>
+ 
+            <button type="button" class="btn" onclick="calcularTotal()">Calcular Total</button>
+<button type="submit" class="btn">Generar PDF</button>
+</form>
+</section>
+ 
+    <section class="products">
+<h2>Preguntas Frecuentes</h2>
+<p><strong>¿Cuánto tiempo tarda el envío?</strong><br>El envío tarda entre 3 y 5 días hábiles.</p>
+<p><strong>¿Ofrecen garantía?</strong><br>Sí, todas nuestras guitarras tienen una garantía de 1 año.</p>
+</section>
+ 
+ <section class="products">
+  <h2>Blog de Preguntas y Respuestas</h2>
+  <form id="qaForm">
+    <p><label for="clave">Pregunta:</label><br>
+    <input type="text" id="clave" required></p>
+
+    <p><label for="texto">Respuesta:</label><br>
+    <textarea id="texto" required></textarea></p>
+
+    <p><input type="submit" class="btn" value="Publicar"></p>
+  </form>
+
+  <div id="caja">
+    No hay información disponible
+  </div>
+</section>
+
+    <section class="products">
+<h2>Síguenos en Redes Sociales</h2>
+<p><a href="#" style="color: #f28c38;">Facebook</a> | <a href="#" style="color: #f28c38;">Twitter</a> | <a href="#" style="color: #f28c38;">Instagram</a></p>
+</section>
+
+
+ 
+    <footer>
+<p>© 2025 Fender Guitars. Todos los derechos reservados.</p>
+</footer>
+ 
+    <script>
+        // BLOG PREGUNTAS Y RESPUESTAS
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('qaForm');
+  const caja = document.getElementById('caja');
+
+  function mostrarPreguntas() {
+    caja.innerHTML = '';
+    if (localStorage.length === 0) {
+      caja.innerHTML = '<p>No hay información disponible</p>';
+      return;
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const clave = localStorage.key(i);
+      const valor = localStorage.getItem(clave);
+      caja.innerHTML += `<div style="margin-bottom: 1rem;"><strong>${clave}</strong><br>${valor}</div>`;
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const clave = document.getElementById('clave').value.trim();
+    const texto = document.getElementById('texto').value.trim();
+
+    if (clave && texto) {
+      localStorage.setItem(clave, texto);
+      form.reset();
+      mostrarPreguntas();
+    }
+  });
+
+  mostrarPreguntas();
+});
+
+
+        function calcularTotal() {
+            const guitarra = document.getElementById('guitarra').value;
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+            const mensajeError = document.getElementById('mensajeError');
+            const totalElement = document.getElementById('total');
+ 
+            mensajeError.textContent = '';
+            totalElement.textContent = '';
+ 
+            if (!guitarra) {
+                mensajeError.textContent = 'Por favor, selecciona una guitarra.';
+                return;
+            }
+            if (isNaN(cantidad) || cantidad < 1) {
+                mensajeError.textContent = 'Ingresa una cantidad válida.';
+                return;
+            }
+ 
+            const [_, precio] = guitarra.split('|');
+            const total = precio * cantidad;
+            totalElement.textContent = `Total: $${total.toLocaleString()}`;
+        }
+ 
+        function generarCotizacion(event) {
+            event.preventDefault();
+ 
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const guitarra = document.getElementById('guitarra').value;
+            const cantidad = parseInt(document.getElementById('cantidad').value);
+            const mensajeError = document.getElementById('mensajeError');
+ 
+            mensajeError.textContent = '';
+ 
+            if (!nombre || !email || !guitarra || isNaN(cantidad) || cantidad < 1) {
+                mensajeError.textContent = 'Por favor, completa todos los campos correctamente.';
+                return false;
+            }
+ 
+            const [guitarraNombre, precio] = guitarra.split('|');
+            const total = precio * cantidad;
+ 
+            // Generar PDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+ 
+            // Estilos inspirados en avance3proyecto.css
+            doc.setFillColor(26, 26, 26); // #1a1a1a
+            doc.rect(0, 0, 210, 297, 'F'); // Fondo oscuro
+            doc.setTextColor(242, 140, 56); // #f28c38
+            doc.setFontSize(20);
+            doc.text('Cotización - Fender Guitars', 10, 20);
+ 
+            doc.setTextColor(255, 255, 255); // Blanco para el texto
+            doc.setFontSize(12);
+            doc.text(`Nombre: ${nombre}`, 10, 40);
+            doc.text(`Email: ${email}`, 10, 50);
+            doc.text(`Guitarra: ${guitarraNombre}`, 10, 60);
+            doc.text(`Cantidad: ${cantidad}`, 10, 70);
+            doc.setTextColor(242, 140, 56);
+            doc.setFontSize(14);
+            doc.text(`Total: $${total.toLocaleString()}`, 10, 90);
+ 
+            doc.setDrawColor(242, 140, 56);
+            doc.line(10, 95, 100, 95); // Línea decorativa
+ 
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(10);
+            doc.text('© 2025 Fender Guitars. Todos los derechos reservados.', 10, 280);
+ 
+            doc.save(`cotizacion_${nombre}.pdf`);
+            return false;
+        }
+</script>
+
+
+
+</body>
+</html>

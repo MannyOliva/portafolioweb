@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jspdf/js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jspdf/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.addimage.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript">
+		function generar(){
+			var doc = new jsPDF();
+			doc.setFontSize(40);
+			doc.setTextColor(9,7,121);
+			doc.text(40,20,"Hola mundo");
+			var string = doc.output('datauristring');
+			$('iframe').attr('src',string);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" onclick="generar()" value="Generar PDF"/>	<br/>
+	<iframe frameborder="0" width="500" height="400"></iframe>
+</body>
+</html>
